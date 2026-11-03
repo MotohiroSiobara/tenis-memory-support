@@ -1,0 +1,200 @@
+/* Static website equivalents of src/theme/{colors,spacing,typography}.ts.
+   Keep these roles aligned when the app's design tokens change. */
+:root {
+  color-scheme: light dark;
+  --background: #f8f7f2;
+  --surface: #ffffff;
+  --primary: #245c4a;
+  --primary-soft: #e6f0ea;
+  --text: #1f2723;
+  --secondary: #66706a;
+  --border: #e4e5df;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121714;
+    --surface: #1b231f;
+    --primary: #8accaa;
+    --primary-soft: #263d33;
+    --text: #eef3ef;
+    --secondary: #aab5ae;
+    --border: #37443d;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.site-header,
+main,
+footer {
+  width: min(100% - 2.5rem, 46rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-underline-offset: 0.25em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.brand {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a,
+footer a,
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+}
+
+[aria-current="page"] {
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+}
+
+.intro {
+  padding-block: 3rem 2rem;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-block: 0.75rem 1.5rem;
+}
+
+h2,
+h3 {
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.125rem;
+  margin-block: 0 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-block: 0 0.5rem;
+}
+
+p {
+  margin-block: 0 1rem;
+}
+
+section {
+  padding-block: 2rem;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 1.5rem;
+}
+
+article + article {
+  margin-top: 2rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--primary-soft);
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.contact {
+  background: var(--surface);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-block: 1rem 2rem;
+}
+
+.email {
+  display: inline-block;
+  padding-block: 0.5rem;
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-block: 0 1rem;
+}
+
+li + li {
+  margin-top: 0.5rem;
+}
+
+.secondary,
+footer {
+  color: var(--secondary);
+}
+
+footer {
+  padding-block: 1.5rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
