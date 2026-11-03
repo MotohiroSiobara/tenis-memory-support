@@ -1,7 +1,7 @@
 /* Static website equivalents of src/theme/{colors,spacing,typography}.ts.
    Keep these roles aligned when the app's design tokens change. */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --background: #f8f7f2;
   --surface: #ffffff;
   --primary: #245c4a;
@@ -16,19 +16,6 @@
   background: var(--background);
   line-height: 1.75;
   overflow-wrap: anywhere;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #121714;
-    --surface: #1b231f;
-    --primary: #8accaa;
-    --on-primary: #102018;
-    --primary-soft: #263d33;
-    --text: #eef3ef;
-    --secondary: #aab5ae;
-    --border: #37443d;
-  }
 }
 
 * {
